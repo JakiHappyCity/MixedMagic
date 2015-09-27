@@ -1,0 +1,13 @@
+1. Right - Left
+
+Example: 1 (Right)
+        -1 (Left)
+        
+2. Up - Down
+
+Example: 1 (Down)
+        -1 (Up)
+        
+3. Aspect Distance
+
+1 == 3

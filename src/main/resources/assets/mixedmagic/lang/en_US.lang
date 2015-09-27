@@ -1,0 +1,39 @@
+Items:
+item.itemLightmetalIngot.name=Lightmetal Ingot
+item.swordLightmetal.name=Lightmetal Sword
+item.pickaxeLightmetal.name=Lightmetal Pickaxe
+item.axeLightmetal.name=Lightmetal Axe
+item.itemDarkmetalIngot.name=Darkmetal Ingot
+
+
+ResearchName:
+tc.research_name.LORE=Lore
+tc.research_name.ILMETAL=Metal of light
+tc.research_name.ILMTOOLS=Tools of light
+tc.research_name.IDMETAL=Metal of dark
+
+
+Research Page:
+tc.research_page.LORE.1=Hello :)
+tc.research_page.LORE.2=Ummm. Bye bye :)
+mm.research_page_ILMETAL.1=You've been thinking whether the light in this life... But you could make it a piece of himself.
+mm.research_page_ILMTOOLS.1=For a long time thinking you still could get what he wanted. Tools of light. This is certainly not the best invention, but I think they say you have a super magician. But know that it is not.
+mm.research_page_IDMETAL.1=However, you are heartless. Just for the sake of this thing you almost destroyed everything in this world. Well proud of his terrible act ...
+
+
+Research Category:
+tc.research_category.MIXEDMAGIC=Mixed Magic
+
+
+Research Text:
+tc.research_text.LORE=Lore of mod
+tc.research_text.ILMETAL=Make your a piece of light
+tc.research_text.ILMTOOLS=You know that you can make it
+tc.research_text.IDMETAL=You're a terrible person
+
+Creative Tabs:
+itemGroup.mixedmagic=Mixed Magic
+
+
+Blocks & Tiles:
+tile.blockLightmetal.name=Lightmetal Block
