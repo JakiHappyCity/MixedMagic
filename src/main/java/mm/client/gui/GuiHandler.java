@@ -19,7 +19,7 @@ public class GuiHandler implements IGuiHandler {
 			switch(ID) {
 			case guiIDLPulverizer:
 				if (entity instanceof TileEntityLPulverizer) {
-					return new ContainerLPulverizer(player.inventory, (TileEntityLPulverizer) entity);
+					return new GuiLPulverizer(player.inventory, (TileEntityLPulverizer) entity);
 				}
     	return null;
 			}
@@ -35,7 +35,7 @@ public class GuiHandler implements IGuiHandler {
 			switch(ID) {
 			case guiIDLPulverizer:
 				if (entity instanceof TileEntityLPulverizer) {
-					return new ContainerLPulverizer(player.inventory, (TileEntityLPulverizer) entity);
+					return new GuiLPulverizer(player.inventory, (TileEntityLPulverizer) entity);
 				}
     	return null;
 			}

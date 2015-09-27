@@ -13,6 +13,8 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import mm.client.gui.GuiHandler;
 import mm.common.lib.CreativeTabMixedMagic;
 import mm.init.MMBlocks;
 import mm.init.MMEnchanctments;
@@ -60,6 +62,7 @@ public class MMCore {
 	public void init(FMLInitializationEvent event)
 	{
 		System.out.println("[MixedMagic] Loading init piece of mod.");
+	    NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
 	}
 	
 	@EventHandler
