@@ -21,8 +21,6 @@ import mm.init.MMEnchanctments;
 import mm.init.MMItems;
 import mm.init.MMRecipes;
 import mm.init.MMThaumonomicon;
-import mm.init.MMTileEntity;
-import mm.network.proxy.MMClient;
 import mm.network.proxy.MMServer;
 import net.minecraft.creativetab.CreativeTabs;
 
@@ -53,7 +51,6 @@ public class MMCore {
 		MMItems.setup();
 		MMBlocks.setup();
 		MMEnchanctments.setup();
-		MMTileEntity.setup();
 		System.out.println("[MixedMagic][PREINIT][PROXY][VOID] LOADING <registerRenderInformation> | <getClientGuiElement> ");
 		proxy.registerRenderInformation();
 	}

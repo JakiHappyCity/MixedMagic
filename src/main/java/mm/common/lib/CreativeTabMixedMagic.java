@@ -4,8 +4,11 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import mm.core.MMCore;
 import mm.init.MMItems;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import thaumcraft.common.config.ConfigItems;
 
 public class CreativeTabMixedMagic extends CreativeTabs {
 
@@ -27,7 +30,7 @@ public class CreativeTabMixedMagic extends CreativeTabs {
     
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem() {
-		return MMItems.itemlightmetalingot;
+		return ConfigItems.itemAmuletRunic;
 	}
 
 }

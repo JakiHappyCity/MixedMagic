@@ -1,11 +1,7 @@
 package mm.network.proxy;
 
 import cpw.mods.fml.common.network.IGuiHandler;
-import mm.common.MMBlocks.ContainerLPulverizer;
-import mm.common.MMTile.TileEntityLPulverizer;
-import mm.core.MMCore;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class MMServer implements IGuiHandler {
