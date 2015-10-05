@@ -3,23 +3,26 @@ package mm.init;
 import cpw.mods.fml.common.registry.GameRegistry;
 import mm.common.MMItems.SimpleItem;
 import mm.core.MMCore;
+import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class MMItems {
 	
 	public static Item crystalPower;
-	public static Item shardKnowledge;
 	
 	public static void setup()
 	{
 		//Items
 		crystalPower = new SimpleItem().setUnlocalizedName("crystalPower").setTextureName("mixedmagic:crystalPower.png").setCreativeTab(MMCore.tabMM);
-		shardKnowledge = new SimpleItem().setUnlocalizedName("shardKnowledge").setTextureName("mixedmagic:shardKnowledge.png").setCreativeTab(MMCore.tabMM);
 		
-		//Items with GUI
+		//GameRegistry
 		GameRegistry.registerItem(crystalPower, "crystalPower");
-		GameRegistry.registerItem(shardKnowledge, "shardKnowledge");
+		
+		//Ore Dictionary
+		OreDictionary.registerOre("crystalPower", new ItemStack(crystalPower));
 	}
 	
 }

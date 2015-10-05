@@ -1,10 +1,11 @@
 package mm.core;
 
-import static mm.core.MMCore.modid;
-import static mm.core.MMCore.name;
-import static mm.core.MMCore.version;
+import static mm.core.MMCore.*;
 
 import java.util.ArrayList;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -14,13 +15,13 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import mm.client.gui.GuiHandler;
 import mm.common.lib.CreativeTabMixedMagic;
 import mm.init.MMBlocks;
 import mm.init.MMEnchanctments;
 import mm.init.MMItems;
 import mm.init.MMRecipes;
 import mm.init.MMThaumonomicon;
+import mm.network.proxy.MMClient;
 import mm.network.proxy.MMServer;
 import net.minecraft.creativetab.CreativeTabs;
 
@@ -32,7 +33,7 @@ public class MMCore {
 	public static final String name = "Mixed Magic";
 	public static final String serverProxy = "mm.network.proxy.MMServer";
 	public static final String clientProxy = "mm.network.proxy.MMClient";
-	public static final int guiIDLPulverizer = 0;
+	public static final Logger log = LogManager.getLogger("MIXEDMAGIC");
 	public static CreativeTabs tabMM = new CreativeTabMixedMagic(CreativeTabs.getNextID(), "mixedmagic");
 	
 	@SidedProxy(serverSide = serverProxy, clientSide = clientProxy)
@@ -43,30 +44,24 @@ public class MMCore {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-		System.out.println("[INFO][MixedMagic] Next text with @MixedMagic == For developers. ");
-		System.out.println("[MixedMagic] Loading preInit piece of mod.");
-		System.out.println("[MixedMagic][PREINIT] LOADING <MMItems> | <MMBlocks> | <MMEnchantments> | LOADING PROXY ");
+		log.info("Loading Mixed Magic");
 		instance = this;
 		setupModInfo(event.getModMetadata());
 		MMItems.setup();
 		MMBlocks.setup();
 		MMEnchanctments.setup();
-		System.out.println("[MixedMagic][PREINIT][PROXY][VOID] LOADING <registerRenderInformation> | <getClientGuiElement> ");
 		proxy.registerRenderInformation();
 	}
 	
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		System.out.println("[MixedMagic] Loading init piece of mod.");
-	    NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
+	    NetworkRegistry.INSTANCE.registerGuiHandler(instance, new MMClient());
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		System.out.println("[MixedMagic] Loading postInit piece of mod.");
-		System.out.println("[MixedMagic][POSTINIT] LOADING <MMRecipes> | <MMThaumonomicon> - void {setup} ");
 		MMRecipes.setup();
 		MMThaumonomicon.setup();
 	}
